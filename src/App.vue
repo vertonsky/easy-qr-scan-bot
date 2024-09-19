@@ -90,6 +90,12 @@
             </v-expansion-panel-text>
           </v-expansion-panel>
         </v-expansion-panels>
+        <v-btn
+          v-if="cloud_storage_keys.length"
+          @click="sendAllStorage"
+          color="primary"
+          class="mt-4"
+        >Отправить все данные</v-btn>
       </v-card>
       <!--settings-->
       <AppSettings 
@@ -168,6 +174,11 @@ export default {
     this.TMA.ready();
   },
   methods: {
+    // Отправить всё содержимое CloudStorage
+    sendAllStorage() {
+      const dataToSend = JSON.stringify(this.cloud_storage_values, null, 2);
+      this.TMA.sendData(dataToSend); // Отправить все данные через WebApp API
+  },
     // Cloud Storage methods
     loadStorage() {
       this.TMA.CloudStorage.getKeys(this.processKeys);
