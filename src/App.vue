@@ -259,7 +259,7 @@ export default {
     },
     secondaryButtonClicked() {
       // Получаем ключи из CloudStorage и формируем данные
-      let dataToSend = JSON.stringify(this.cloud_storage_values, null, 2);
+      let dataToSend = JSON.stringify(this.loadStorage(), null, 2);
   
       // Отправляем данные в бот
       this.TMA.sendData({
