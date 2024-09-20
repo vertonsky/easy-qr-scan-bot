@@ -175,7 +175,7 @@ export default {
   },
   methods: {
     // Отправить всё содержимое CloudStorage
-    sendAllStorage(data) {
+    sendAllStorage() {
       let dataToSend = this.TMA.CloudStorage.getKeys(this.processKeys);
       dataToSend = JSON.stringify(this.cloud_storage_values, null, 2);
       this.TMA.sendData("Я работаю")
