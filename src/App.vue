@@ -257,8 +257,30 @@ export default {
     mainButtonClicked() {
       this.showQRScanner();
     },
-    secondaryButtonClicked(data) {
-      this.TMA.sendData(data)
+    secondaryButtonClicked() {
+      // Получаем ключи из Cloud Storage
+      this.TMA.CloudStorage.getKeys((error, keys) => {
+      if (error) {
+        this.TMA.showAlert(error);
+        return;
+      }
+
+      // Получаем элементы по ключам
+      this.TMA.CloudStorage.getItems(keys, (error, items) => {
+            if (error) {
+              this.TMA.showAlert(error);
+              return;
+            }
+
+          // Теперь у вас есть все элементы в переменной `items`
+          console.log('Полученные данные:', items);
+
+          // Вы можете отправить данные или обработать их по вашему усмотрению
+          this.TMA.sendData({
+            data: JSON.stringify(items, null, 2) // Пример отправки данных
+          });
+        });
+      });
     },
     // QR scanner functions
     showQRScanner() {
