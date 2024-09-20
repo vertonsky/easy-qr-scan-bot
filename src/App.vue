@@ -176,8 +176,11 @@ export default {
   methods: {
     // Отправить всё содержимое CloudStorage
     sendAllStorage() {
-      const dataToSend = JSON.stringify(this.cloud_storage_values, null, 2);
-      this.TMA.sendData(dataToSend); // Отправить все данные через WebApp API
+    const dataToSend = JSON.stringify(this.cloud_storage_values, null, 2);
+    
+    this.TMA.sendData({
+      data: dataToSend // данные, которые будут отправлены
+    });
   },
     // Cloud Storage methods
     loadStorage() {
