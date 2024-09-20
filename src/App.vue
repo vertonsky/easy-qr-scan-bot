@@ -259,11 +259,11 @@ export default {
     },
     secondaryButtonClicked() {
       // Получаем ключи из CloudStorage и формируем данные
-      let dataToSend = JSON.stringify(this.loadStorage(), null, 2);
+      // let dataToSend = JSON.stringify(this.loadStorage(), null, 2);
   
       // Отправляем данные в бот
       this.TMA.sendData({
-        data: dataToSend // данные, которые будут отправлены
+        data: "DATA TO SEND" // данные, которые будут отправлены
       });
     },
     // QR scanner functions
