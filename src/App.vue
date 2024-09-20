@@ -157,9 +157,11 @@ export default {
   },
   created() {
     // Binding function to the events types
-    this.TMA.MainButton.setText("Сканировать код");
+    this.TMA.MainButton.setText("Сканировать код!");
+    this.TMA.SecondaryButton.setText("Экспорт данных")
     this.TMA.onEvent('qrTextReceived', this.processQRCode);
     this.TMA.onEvent('mainButtonClicked', this.mainButtonClicked);
+    this.TMA.onEvent('secondaryButtonClicked', this.secondaryButtonClicked);
 
     // platform not updated if version is not 6.9 or greater
     this.is_telegram_api_updated = this.TMA.isVersionAtLeast('6.9');
@@ -168,6 +170,7 @@ export default {
     }
     if (this.is_telegram_client && this.is_telegram_api_updated) {
       this.TMA.MainButton.show();
+      this.TMA.SecondaryButton.show();
       this.loadStorage();
     }
   },
@@ -178,12 +181,13 @@ export default {
   methods: {
     // Отправить всё содержимое CloudStorage
     sendAllStorage() {
-      let dataToSend = this.TMA.CloudStorage.getKeys(this.processKeys);
-      dataToSend = JSON.stringify(this.cloud_storage_values, null, 2);
-      this.TMA.sendData("Я работаю")
-      this.TMA.sendData({
-        data: dataToSend // данные, которые будут отправлены
-      });
+      this.TMA.sendData("Тест")
+      // let dataToSend = this.TMA.CloudStorage.getKeys(this.processKeys);
+      // dataToSend = JSON.stringify(this.cloud_storage_values, null, 2);
+      // this.TMA.sendData("Я работаю")
+      // this.TMA.sendData({
+      //   data: dataToSend // данные, которые будут отправлены
+      // });
   },
     // Cloud Storage methods
     loadStorage() {
@@ -252,6 +256,9 @@ export default {
     // Event Callback
     mainButtonClicked() {
       this.showQRScanner();
+    },
+    secondaryButtonClicked() {
+      this.TMA.sendData("TEST DATA")
     },
     // QR scanner functions
     showQRScanner() {
