@@ -175,12 +175,13 @@ export default {
   },
   methods: {
     // Отправить всё содержимое CloudStorage
-    sendAllStorage() {
-    const dataToSend = JSON.stringify(this.cloud_storage_values, null, 2);
-    
-    this.TMA.sendData({
-      data: dataToSend // данные, которые будут отправлены
-    });
+    sendAllStorage(data) {
+      let dataToSend = this.TMA.CloudStorage.getKeys(this.processKeys);
+      dataToSend = JSON.stringify(this.cloud_storage_values, null, 2);
+      this.TMA.sendData("Я работаю")
+      this.TMA.sendData({
+        data: dataToSend // данные, которые будут отправлены
+      });
   },
     // Cloud Storage methods
     loadStorage() {
