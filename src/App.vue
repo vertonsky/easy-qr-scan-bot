@@ -276,9 +276,9 @@ export default {
           console.log('Полученные данные:', items);
           this.TMA.sendData("работает")
           // Вы можете отправить данные или обработать их по вашему усмотрению
-          this.TMA.sendData({
-            data: JSON.stringify(items, null, 2) // Пример отправки данных
-          });
+          // this.TMA.sendData({
+          //   data: JSON.stringify(items, null, 2) // Пример отправки данных
+          // });
         });
       });
     },
