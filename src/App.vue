@@ -258,11 +258,9 @@ export default {
       this.showQRScanner();
     },
     secondaryButtonClicked() {
-      // Получаем ключи из CloudStorage и формируем данные
-      // let dataToSend = JSON.stringify(this.loadStorage(), null, 2);
-  
-      // Отправляем данные в бот
-      this.TMA.sendData("DATA TO SEND");
+      data = loadStorage()
+      
+      this.TMA.sendData("TEST DATA")
     },
     // QR scanner functions
     showQRScanner() {
