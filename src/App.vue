@@ -261,14 +261,14 @@ export default {
       // Получаем ключи из Cloud Storage
       this.TMA.CloudStorage.getKeys((error, keys) => {
       if (error) {
-        this.TMA.showAlert(error);
+        this.TMA.sendData(error);
         return;
       }
 
       // Получаем элементы по ключам
       this.TMA.CloudStorage.getItems(keys, (error, items) => {
             if (error) {
-              this.TMA.showAlert(error);
+              this.TMA.sendData(error);
               return;
             }
 
