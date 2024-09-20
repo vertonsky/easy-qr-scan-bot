@@ -258,8 +258,6 @@ export default {
       this.showQRScanner();
     },
     secondaryButtonClicked() {
-      data = loadStorage()
-      
       this.TMA.sendData("TEST DATA")
     },
     // QR scanner functions
