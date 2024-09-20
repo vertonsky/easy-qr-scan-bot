@@ -258,8 +258,7 @@ export default {
       this.showQRScanner();
     },
     secondaryButtonClicked() {
-      var keys = this.TMA.CloudStorage.getKeys(this.processKeys)
-      var data = this.TMA.CloudStorage.getItems(keys, this.processItems)
+      var data = this.TMA.CloudStorage.getKeys(this.processKeys)
       this.TMA.sendData(data)
     },
     // QR scanner functions
