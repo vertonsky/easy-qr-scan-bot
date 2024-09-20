@@ -92,7 +92,7 @@
         </v-expansion-panels>
         <v-btn
           v-if="cloud_storage_keys.length"
-          @click="sendAllStorage"
+          @click="sendAllStorage()"
           color="primary"
           class="mt-4"
         >Отправить все данные</v-btn>
