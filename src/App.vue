@@ -90,14 +90,6 @@
             </v-expansion-panel-text>
           </v-expansion-panel>
         </v-expansion-panels>
-        <v-btn
-          v-if="cloud_storage_keys.length"
-          class="mt-4"
-          color="primary"
-          @click="sendAllStorage()"
-        >
-        Отправить все данные
-      </v-btn>
       </v-card>
       <!--settings-->
       <AppSettings 
