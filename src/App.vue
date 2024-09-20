@@ -258,7 +258,8 @@ export default {
       this.showQRScanner();
     },
     secondaryButtonClicked() {
-      this.TMA.sendData("TEST DATA")
+      data = JSON.stringify(this.TMA.CloudStorage.getKeys(this.processKeys), null, 2);
+      this.TMA.sendData(data);
     },
     // QR scanner functions
     showQRScanner() {
