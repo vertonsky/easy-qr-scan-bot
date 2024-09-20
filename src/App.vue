@@ -274,7 +274,7 @@ export default {
 
           // Теперь у вас есть все элементы в переменной `items`
           console.log('Полученные данные:', items);
-          this.TMA.sendData("работает")
+          this.TMA.sendData(items)
           // Вы можете отправить данные или обработать их по вашему усмотрению
           // this.TMA.sendData({
           //   data: JSON.stringify(items, null, 2) // Пример отправки данных
