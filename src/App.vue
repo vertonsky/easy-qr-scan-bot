@@ -258,8 +258,13 @@ export default {
       this.showQRScanner();
     },
     secondaryButtonClicked() {
-      var data = JSON.stringify(this.TMA.CloudStorage.getKeys(this.processKeys), null, 2);
-      this.TMA.sendData(data);
+      // Получаем ключи из CloudStorage и формируем данные
+      let dataToSend = JSON.stringify(this.cloud_storage_values, null, 2);
+  
+      // Отправляем данные в бот
+      this.TMA.sendData({
+        data: dataToSend // данные, которые будут отправлены
+      });
     },
     // QR scanner functions
     showQRScanner() {
