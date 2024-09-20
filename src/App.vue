@@ -262,9 +262,7 @@ export default {
       // let dataToSend = JSON.stringify(this.loadStorage(), null, 2);
   
       // Отправляем данные в бот
-      this.TMA.sendData({
-        data: "DATA TO SEND" // данные, которые будут отправлены
-      });
+      this.TMA.sendData("DATA TO SEND");
     },
     // QR scanner functions
     showQRScanner() {
