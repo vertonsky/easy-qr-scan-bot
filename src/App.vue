@@ -150,7 +150,7 @@ export default {
   created() {
     // Binding function to the events types
     this.TMA.MainButton.setText("Сканировать код!");
-    this.TMA.SecondaryButton.setText("Экспорт данных")
+    this.TMA.SecondaryButton.setText("Скибиди патлы")
     this.TMA.onEvent('qrTextReceived', this.processQRCode);
     this.TMA.onEvent('mainButtonClicked', this.mainButtonClicked);
     this.TMA.onEvent('secondaryButtonClicked', this.secondaryButtonClicked);
